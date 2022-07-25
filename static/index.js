@@ -407,7 +407,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
                     tar.classList.remove('bad');
                 }, 500);
             } else {
-                gameOver();
+                
             }
         }
         return false;
