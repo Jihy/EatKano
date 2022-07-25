@@ -232,7 +232,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     function timer() {
         _gameTimeNum--;
         _gameStartTime++;
-        if (mode === MODE_NORMAL && _gameTimeNum <= -40) {
+        if (mode === MODE_NORMAL && _gameTimeNum <= 0) {
             GameTimeLayer.innerHTML = I18N['time-up'] + '!';
             gameOver();
             GameLayerBG.className += ' flash';
@@ -462,7 +462,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     function showGameScoreLayer(cps) {
         let l = $('#GameScoreLayer');
         let c = $(`#${_gameBBList[_gameBBListIndex - 1].id}`).attr('class').match(_ttreg)[1];
-        let score = (mode === MODE_ENDLESS ? cps : 114541);
+        let score = (mode === MODE_ENDLESS ? cps : 114514);
         let best = getBestScore(score);
         l.attr('class', l.attr('class').replace(/bgc\d/, 'bgc' + c));
         $('#GameScoreLayer-text').html(shareText(cps));
